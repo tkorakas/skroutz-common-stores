@@ -1,12 +1,10 @@
-const webpack = require("webpack");
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const srcDir = '../src/';
-const ExtensionReloader = require('webpack-extension-reloader');
 
 module.exports = {
     entry: {
-        content_script: path.join(__dirname, srcDir + 'content_script.ts')
+        content_script: path.join(__dirname, srcDir + 'content_script.ts'),
     },
     output: {
         path: path.join(__dirname, '../dist/js'),
@@ -31,7 +29,6 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js']
     },
     plugins: [
-        new ExtensionReloader(),
         new CopyPlugin([
             { from: '.', to: '../' }
         ],

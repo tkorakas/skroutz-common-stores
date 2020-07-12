@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Skroutz common stores",
   "scripts": {
-    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "watch": "NODE_ENV=development webpack --config webpack/webpack.dev.js --watch",
     "build": "webpack --config webpack/webpack.prod.js",
     "clean": "rimraf dist",
     "test": "npx jest"

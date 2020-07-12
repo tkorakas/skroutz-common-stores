@@ -1,7 +1,9 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
 const ExtensionReloader = require('webpack-extension-reloader');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
+
+const common = require('./webpack.common.js');
 const srcDir = '../src/';
 
 module.exports = merge(common, {
@@ -18,5 +20,11 @@ module.exports = merge(common, {
                 background: 'background'
             }
         }),
+        new CopyPlugin([
+            { from: './icon.png', to: '../' },
+            { from: './manifest.dev.json', to: '../manifest.json' }
+        ],
+            { context: 'public' }
+        ),
     ]
 });

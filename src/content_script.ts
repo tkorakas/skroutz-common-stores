@@ -11,7 +11,6 @@ window.onload = function () {
     if (!location.pathname.startsWith(`/s/`)) {
         return;
     }
-
     items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
 
     const button = createButton('toggle', TOGGLE_ID);

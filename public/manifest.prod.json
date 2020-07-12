@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Skroutz common stores",
+  "description": "Chrome extension that finds all the common stores for the products you want on Skroutz.",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+      {
+          "matches": [
+            "http://www.skroutz.gr/*",
+            "https://www.skroutz.gr/*"
+          ],
+          "js": ["js/content_script.js"]
+      }
+  ]
+}
